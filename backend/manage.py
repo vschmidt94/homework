@@ -5,6 +5,7 @@ from flask_migrate import Migrate, MigrateCommand
 from flask_script import Manager
 
 from app.main import create_app, db
+from app.main.model import user
 
 
 # Allows use of environment variable to control environment
