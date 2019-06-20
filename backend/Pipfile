@@ -12,6 +12,7 @@ flask-migrate = "*"
 pyjwt = "*"
 flask-script = "*"
 flask-testing = "*"
+pytest-flask = "*"
 
 [requires]
 python_version = "3.7"
