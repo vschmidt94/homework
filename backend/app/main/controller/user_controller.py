@@ -26,14 +26,14 @@ class UserList(Resource):
 
 
 @api.route('/<public_id>')
-@api.param('public_id', 'The User identifier')
+@api.param('user_id', 'The User identifier')
 @api.response(404, 'User not found.')
 class User(Resource):
     @api.doc('get a user')
     @api.marshal_with(_user)
-    def get(self, public_id):
+    def get(self, user_id):
         """get a user given its identifier"""
-        user = get_a_user(public_id)
+        user = get_a_user(user_id)
         if not user:
             api.abort(404)
         else:

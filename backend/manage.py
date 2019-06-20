@@ -8,6 +8,7 @@ from app import blueprint
 from app.main import create_app, db
 from app.main.model import user
 from app.main.model import role
+from app.main.model import blacklist
 
 
 # Allows use of environment variable to control environment
