@@ -23,7 +23,7 @@ class RoleDto:
     """
     Role Data Transfer Object
 
-    Responsible for transferring user data between objects.
+    Responsible for transferring role data between objects.
     """
     api = Namespace('role', description='role related operations')
     role = api.model('role', {
@@ -31,4 +31,17 @@ class RoleDto:
         'id': fields.String(required=False, description='role id'),
         'rolename': fields.String(required=True, description='role name'),
         'description': fields.String(required=True, description='role description')
+    })
+
+
+class AuthDto:
+    """
+    Authentication Data Transfer Object
+
+    Responsible for transferring auth data between objects.
+    """
+    api = Namespace('auth', description='authentication related operations')
+    user_auth = api.model('auth_details', {
+        'email': fields.String(required=True, description='The email address'),
+        'password': fields.String(required=True, description='The user password '),
     })

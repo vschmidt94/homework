@@ -1,7 +1,7 @@
 from flask import request
 from flask_restplus import Resource
 
-from ..util import RoleDto
+from ..util.dtos import RoleDto
 from ..service.role_service import save_new_role, get_all_roles, get_a_role
 
 api = RoleDto.api
