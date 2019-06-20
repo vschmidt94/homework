@@ -15,6 +15,8 @@ api = Api(blueprint,
           description='Homework Project'
           )
 
-api.add_namespace(user_ns, path='/user')
-api.add_namespace(role_ns, path='/role')
+api.add_namespace(user_ns, path='api/user')
+api.add_namespace(role_ns, path='api/role')
 api.add_namespace(auth_ns)
+
+from .main.views import views

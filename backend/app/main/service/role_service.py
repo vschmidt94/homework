@@ -15,7 +15,8 @@ def save_new_role(data):
         save_changes(new_role)
         response_object = {
             'status': 'success',
-            'message': 'Successfully created role.'
+            'message': 'Successfully created role.',
+            'id': str(new_role.id)
         }
         return response_object, 201
     else:

@@ -8,7 +8,7 @@ from app.main.model.user import User
 def generate_token(user):
     try:
         # generate the auth token
-        auth_token = user.encode_auth_token(user.id)
+        auth_token = user.encode_auth_token(user.user_id)
         response_object = {
             'status': 'success',
             'message': 'Successfully registered.',
@@ -26,13 +26,19 @@ def generate_token(user):
 def save_new_user(data):
     user = User.query.filter_by(email=data['email']).first()
     if not user:
+        # TODO: this is hacky, figure out better approach
+        if 'role_id' in data:
+            roleid=data['role_id']
+        else:
+            roleid=None
+
         new_user = User(
             firstname=data['firstname'],
             lastname=data['lastname'],
             email=data['email'],
             username=data['username'],
             password=data['password'],
-            role_id=data['role_id'],
+            role_id=roleid,
             registered_on=datetime.datetime.utcnow()
         )
         save_changes(new_user)

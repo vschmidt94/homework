@@ -16,9 +16,10 @@ class UserList(Resource):
         """List all registered users"""
         return get_all_users()
 
-    @api.response(201, 'User successfully created.')
-    @api.doc('create a new user')
     @api.expect(_user, validate=True)
+    @api.response(201, 'User successfully created.')
+    @api.response(500, 'Create user failed')
+    @api.doc('create a new user')
     def post(self):
         """Creates a new User """
         data = request.json
