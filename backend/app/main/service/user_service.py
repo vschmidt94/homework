@@ -3,18 +3,20 @@ import datetime
 
 from app.main import db
 from app.main.model.user import User
+from app.main.model.role import Role
 
 
 def save_new_user(data):
     user = User.query.filter_by(email=data['email']).first()
     if not user:
         new_user = User(
-            firstname=data['fname'],
-            lastname=data['lname'],
+            firstname=data['firstname'],
+            lastname=data['lastname'],
             public_id=str(uuid.uuid4()),
             email=data['email'],
             username=data['username'],
             password=data['password'],
+            role_id=data['role_id'],
             registered_on=datetime.datetime.utcnow()
         )
         save_changes(new_user)
