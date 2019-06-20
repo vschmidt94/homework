@@ -11,6 +11,7 @@ class Role(db.Model):
     rolename = db.Column(db.String(50), nullable=True)
     description = db.Column(db.String(100), nullable=True)
     created_on = db.Column(db.DateTime, nullable=False)
+    users = db.relationship('Users', backref=db.backref('user', lazy='dynamic'))
 
     def __repr__(self):
         return "<Role '{}'>".format(self.rolename)
