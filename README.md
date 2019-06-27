@@ -78,7 +78,7 @@ Right now set to listen on localhost port 5000
 
 ### On Flask
 
-I knew from Sarah that Flask is preferred over Django, so I used this as opportunity to touch Flask. To be honest, I'm still wrapping my head around it, progress was frustratingly slow - and I realized the tutorial I initially latched onto doesn't use the most Pythonic structure.  Seems like this article proposes a cleaner organization: http://michal.karzynski.pl/blog/2016/06/19/building-beautiful-restful-apis-using-flask-swagger-ui-flask-restplus/
+I knew from Sarah that Flask is preferred over Django, so I used this as opportunity to touch Flask. To be honest, I'm still wrapping my head around it, progress was frustratingly slow - and I realized the tutorial I initially latched onto (Greg Obinna's at: https://medium.com/free-code-camp/structuring-a-flask-restplus-web-service-for-production-builds-c2ec676de563) doesn't use the most Pythonic structure.  Seems like this article proposes a cleaner organization: http://michal.karzynski.pl/blog/2016/06/19/building-beautiful-restful-apis-using-flask-swagger-ui-flask-restplus/
 
 I opted for `Flask-RESTplus` to leverage the built-in Swagger interface.
 
