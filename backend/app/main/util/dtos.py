@@ -28,6 +28,7 @@ class RoleDto:
     api = Namespace('role', description='role related operations')
     role = api.model('role', {
         # TODO: see if id can be removed from Swagger interface for post... need to learn that
+        # RVW: id could be removed by defining a different model to use at API level.
         'id': fields.String(required=False, description='role id'),
         'rolename': fields.String(required=True, description='role name'),
         'description': fields.String(required=True, description='role description')

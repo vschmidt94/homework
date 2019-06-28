@@ -3,6 +3,7 @@ import datetime
 from app.main import db
 from app.main.model.role import Role
 
+# RVW: (applies throughout) - functions are poorly documented! Fix.
 
 def save_new_role(data):
     role = Role.query.filter_by(rolename=data['rolename']).first()

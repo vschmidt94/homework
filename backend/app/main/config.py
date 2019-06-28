@@ -7,7 +7,11 @@ class Config:
     SECRET_KEY = os.getenv('SECRET_KEY', 'the_very_secret_key')
     DEBUG = False
 
-
+# RVW: SQLLite is a pain in the a$$ for most migrations, but has a good role here.
+#      Suggest adding some manager commands to wipe the DBs and re-init. It's
+#      a hassle to have to do that more than once as DB evolves.
+# RVW: Explicit is better than implicit. Suggest both dev config, testing config, and prod config
+#      explicitly call out same settings so differences between the configs jump out.
 class DevelopmentConfig(Config):
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'flask_api_dev.db')

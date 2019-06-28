@@ -5,6 +5,9 @@ from .. import db, flask_bcrypt
 from ..config import key
 from app.main.model.blacklist import BlacklistToken
 
+# RVW: TODO - Read up on SQLAlchemy more. Simple join here seems to work, but seems like
+#      I should not have to have included 'role' field here. 'role_id' should define the
+#      F.K. for join, so I *think* there is better way to include fields from join "on the fly"
 
 class User(db.Model):
     """
@@ -13,6 +16,8 @@ class User(db.Model):
     """
     __tablename__ = "user"
 
+    # RVW: Bad idea in general to expose autoincrement id through API. Too predictable.
+    #      Should implement a public_id that is UUID type randomized, distinct UID.
     user_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     username = db.Column(db.String(50), unique=True)
     firstname = db.Column(db.String(50), nullable=True)

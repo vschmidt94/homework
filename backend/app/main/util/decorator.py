@@ -4,7 +4,7 @@ from flask import request
 
 from app.main.service.auth_helper import Auth
 
-
+# Set up custom decorators
 def token_required(f):
     @wraps(f)
     def decorated(*args, **kwargs):

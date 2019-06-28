@@ -7,6 +7,7 @@ from ..util.dtos import AuthDto
 api = AuthDto.api
 user_auth = AuthDto.user_auth
 
+# RVW: Mentioned elsewhere, hook up a PEP8 formatter and linter.
 
 @api.route('/login')
 class UserLogin(Resource):
@@ -15,6 +16,8 @@ class UserLogin(Resource):
     """
 
     @api.doc('user login')
+    #RVW: Realized I should be expecting a model. The DTO model may not be
+    #     the right one, don't know why I commented this one out.
     #@api.expect(user_auth, validate=True)
     def post(self):
         # get the post data

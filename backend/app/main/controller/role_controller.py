@@ -7,6 +7,9 @@ from ..service.role_service import save_new_role, get_all_roles, get_a_role
 api = RoleDto.api
 _role = RoleDto.role
 
+# RVW: for as basic as the service functions are, I would probably consolidate
+#      the functionality here and drop role_service file. Goes back to comments
+#      about finding a better organization.
 
 @api.route('/')
 class RoleList(Resource):
@@ -18,6 +21,8 @@ class RoleList(Resource):
 
     @api.response(201, 'Role successfully created.')
     @api.doc('create a new role')
+    #RVW: Mentioned elsewhere, could define a model with only essential fields
+    #     and that would keep swagger documentation cleaner / less confusion.
     @api.expect(_role, validate=True)
     def post(self):
         """Creates a new Role """

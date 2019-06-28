@@ -1,6 +1,16 @@
 from app.main.model.user import User
 from ..service.blacklist_service import save_token
 
+#RVW: ? Research - see if there's a module with all the HTTP return codes ?
+#     If this were C, they would be #defines, seems odd / error prone to encode them
+#     directly.
+# EDIT: See Python http.HTTPStatus class - it has the codes enumerated as I am thinking
+#     of and also text descriptions. Should be using that as a standardized return format,
+#     (where appropriate) - plus, improves readability.
+
+#RVW/TODO: Get more practice with JWT authorizations. Again, suspect there is existing
+#     module out there that can handle most of this. Need to gain experience with other
+#     implementations - this one feels very "roll your own" version of common use case.
 
 class Auth:
 
